@@ -8,7 +8,7 @@ import Namespace from "@superfleb/random/namespace";
 
 const justRandomChars = chars(10); // e.g., "RaNdOm1234"
 const fancyRandomChars = chars(5, "prefix_", "_suffix"); // e.g., "prefix_RaNdm_suffix"
-const xmlCompatibleRandomChars = chars(10, "_", "", RandomCharSet.xml); // e.g., "_RaNdOm2345", with all "x"s being XML-name safe
+const xmlCompatibleRandomChars = chars(10, "_", "", RandomCharSet.xml); // e.g., "_RaNdOm2345", with all characters XML-name safe
 const randomHex = chars(10, "", "", RandomCharSet.hex); // e.g., "1a2b3c4d5e"
 // ...and more!
 
