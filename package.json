@@ -1,33 +1,33 @@
 {
   "name": "@superfleb/random",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate random strings (chars) and namespaced names (namespace)",
   "main": "index.js",
-	"exports": {
-		".": {
-			"import": "./dist/index.js",
-			"types": "./dist/index.d.ts"
-		},
-		"./chars": {
-			"import": "./dist/chars.js",
-			"types": "./dist/chars.d.ts"
-		},
-		"./namespace": {
-			"import": "./dist/namespace.js",
-			"types": "./dist/namespace.d.ts"
-		}
-	},
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./chars": {
+      "import": "./dist/chars.js",
+      "types": "./dist/chars.d.ts"
+    },
+    "./namespace": {
+      "import": "./dist/namespace.js",
+      "types": "./dist/namespace.d.ts"
+    }
+  },
   "directories": {
     "test": "tests"
   },
-	"files": [
-		"dist",
-		"src",
-		"README.md",
-		"LICENSE",
-		"package.json",
-		"tsconfig.json"
-	],
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "package.json",
+    "tsconfig.json"
+  ],
   "scripts": {
     "build": "vitest run && esbuild src/*.ts --bundle=false --outdir=dist --minify && tsc --declaration --declarationDir ./dist",
     "prep": "yarn build && bump .",

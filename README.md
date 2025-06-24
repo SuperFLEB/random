@@ -2,6 +2,23 @@
 
 Some functions for random characters for names of things.
 
+```javascript
+import chars, { RandomCharSet } from "@superfleb/random/chars";
+import Namespace from "@superfleb/random/namespace";
+
+const justRandomChars = chars(10); // "xxxxxxxxxx"
+const fancyRandomChars = chars(5, "prefix_", "_suffix"); // "prefix_xxxxx_suffix"
+const xmlCompatibleRandomChars = chars(10, "_", "", RandomCharSet.xml); // "_xxxxxxxxxx", with all "x"s being XML-name safe
+const randomHex = chars(10, "", "", RandomCharSet.hex); // e.g., "1a2b3c4d5e"
+
+const myNamespace = new Namespace();
+const nsId = ns.id();
+const suffixedName = ns.id("_name"); // "_xxxxx_name"
+const suffixedFragment = ns.fragment("_name"); // "#_xxxxx_name"
+const suffixedUrl = ns.url("_name", "'"); // "url('#_xxxxx_name')"
+```
+
+
 ## To Install
 
 This package is included in the GitHub Package Registry, so you will need to be registered
