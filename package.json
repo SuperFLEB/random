@@ -1,0 +1,59 @@
+{
+  "name": "@superfleb/random",
+  "version": "1.0.0",
+  "description": "Generate random strings (chars) and namespaced names (namespace)",
+  "main": "index.js",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./chars": {
+			"import": "./dist/chars.js",
+			"types": "./dist/chars.d.ts"
+		},
+		"./namespace": {
+			"import": "./dist/namespace.js",
+			"types": "./dist/namespace.d.ts"
+		}
+	},
+  "directories": {
+    "test": "tests"
+  },
+	"files": [
+		"dist",
+		"src",
+		"README.md",
+		"LICENSE",
+		"package.json",
+		"tsconfig.json"
+	],
+  "scripts": {
+    "build": "vitest run && esbuild src/*.ts --bundle=false --outdir=dist --minify && tsc --declaration --declarationDir ./dist",
+    "prep": "yarn build && bump .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@superfleb/bump": "^1.0.1",
+    "esbuild": "^0.25.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SuperFLEB/random.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "random",
+    "characters"
+  ],
+  "author": "FLEB (a.k.a. SuperFLEB)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SuperFLEB/random/issues"
+  },
+  "homepage": "https://github.com/SuperFLEB/random#README.md",
+  "packageManager": "yarn@4.9.2"
+}
